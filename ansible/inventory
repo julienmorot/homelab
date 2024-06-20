@@ -1,0 +1,11 @@
+[all]
+consul01 ansible_host=192.168.69.11
+consul02 ansible_host=192.168.69.12
+consul03 ansible_host=192.168.69.13
+ansible ansible_host=192.168.69.20
+mon ansible_host=192.168.69.21
+
+[consul]
+consul01 ansible_host=192.168.69.11
+consul02 ansible_host=192.168.69.12
+consul03 ansible_host=192.168.69.13
