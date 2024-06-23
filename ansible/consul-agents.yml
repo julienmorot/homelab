@@ -1,0 +1,13 @@
+---
+
+- hosts: all,!consul-servers
+  become: yes
+  vars:
+    consul_retry_join:
+      - 192.168.69.11
+      - 192.168.69.12
+      - 192.168.69.13
+    consul_encrypt: "HCFWwIwpJZhNOtA2sfPntTt9R75BPbOA0x94jOBBCgg="
+  roles:
+      - ansible-role-consul
+
