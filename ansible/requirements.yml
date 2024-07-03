@@ -3,3 +3,4 @@
 - name: ansible-role-consul
   src: git@gitlab.com:julienmorot/ansible-role-consul.git
   scm: git
+  version: main
