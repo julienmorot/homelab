@@ -1,0 +1,9 @@
+---
+
+- hosts: all
+  become: yes
+  vars:
+    allow_reboot_for_updates: yes
+  roles:
+      - ansible-role-sysupdates
+

@@ -4,3 +4,13 @@
   src: git@gitlab.com:julienmorot/ansible-role-consul.git
   scm: git
   version: main
+
+- name: ansible-role-sysupdates
+  src: git@gitlab.com:julienmorot/ansible-role-sysupdates.git
+  scm: git
+  version: master
+
+- name: ansible-role-sysdefaults
+  src: git@gitlab.com:julienmorot/ansible-role-sysdefaults.git
+  scm: git
+  version: master
