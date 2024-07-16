@@ -7,7 +7,7 @@
       - 192.168.69.11
       - 192.168.69.12
       - 192.168.69.13
-    consul_encrypt: "HCFWwIwpJZhNOtA2sfPntTt9R75BPbOA0x94jOBBCgg="
+    consul_encrypt: "mp+JOIsXqlbi54HXdGQ7G/nzwfWi3CGI9vlaF1jTrRY="
   roles:
       - ansible-role-consul
 
