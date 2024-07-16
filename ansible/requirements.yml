@@ -14,3 +14,8 @@
   src: git@gitlab.com:julienmorot/ansible-role-sysdefaults.git
   scm: git
   version: master
+
+- name: ansible-role-prometheus
+  src: git@gitlab.com:julienmorot/ansible-role-prometheus.git
+  scm: git
+  version: main
