@@ -4,6 +4,11 @@ consul02 ansible_host=192.168.69.12
 consul03 ansible_host=192.168.69.13
 ansible ansible_host=192.168.69.20
 mon ansible_host=192.168.69.21
+kmaster01 ansible_host=192.168.69.91
+kmaster02 ansible_host=192.168.69.92
+kmaster03 ansible_host=192.168.69.93
+kworker01 ansible_host=192.168.69.94
+kworker02 ansible_host=192.168.69.95
 
 [consul-servers]
 consul01 ansible_host=192.168.69.11
@@ -12,3 +17,11 @@ consul03 ansible_host=192.168.69.13
 
 [prometheus]
 mon ansible_host=192.168.69.21
+
+[k8s]
+kmaster01 ansible_host=192.168.69.91
+kmaster02 ansible_host=192.168.69.92
+kmaster03 ansible_host=192.168.69.93
+kworker01 ansible_host=192.168.69.94
+kworker02 ansible_host=192.168.69.95
+
