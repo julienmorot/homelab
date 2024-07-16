@@ -9,3 +9,6 @@ mon ansible_host=192.168.69.21
 consul01 ansible_host=192.168.69.11
 consul02 ansible_host=192.168.69.12
 consul03 ansible_host=192.168.69.13
+
+[prometheus]
+mon ansible_host=192.168.69.21
