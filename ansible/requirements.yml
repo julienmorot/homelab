@@ -1,21 +1,25 @@
 ---
 
-- name: ansible-role-consul
-  src: git@gitlab.com:julienmorot/ansible-role-consul.git
-  scm: git
-  version: main
+roles:
+  - name: ansible-role-consul
+    src: git@gitlab.com:julienmorot/ansible-role-consul.git
+    scm: git
+    version: main
 
-- name: ansible-role-sysupdates
-  src: git@gitlab.com:julienmorot/ansible-role-sysupdates.git
-  scm: git
-  version: master
+  - name: ansible-role-sysupdates
+    src: git@gitlab.com:julienmorot/ansible-role-sysupdates.git
+    scm: git
+    version: master
 
-- name: ansible-role-sysdefaults
-  src: git@gitlab.com:julienmorot/ansible-role-sysdefaults.git
-  scm: git
-  version: master
+  - name: ansible-role-sysdefaults
+    src: git@gitlab.com:julienmorot/ansible-role-sysdefaults.git
+    scm: git
+    version: master
 
-- name: ansible-role-prometheus
-  src: git@gitlab.com:julienmorot/ansible-role-prometheus.git
-  scm: git
-  version: main
+  - name: ansible-role-prometheus
+    src: git@gitlab.com:julienmorot/ansible-role-prometheus.git
+    scm: git
+    version: main
+
+collections:
+  - name: prometheus.prometheus

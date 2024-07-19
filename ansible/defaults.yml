@@ -5,4 +5,5 @@
   vars:
   roles:
     - ansible-role-sysdefaults
+    - prometheus.prometheus.node_exporter
 
