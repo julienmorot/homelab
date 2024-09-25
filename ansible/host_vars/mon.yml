@@ -1,0 +1,28 @@
+---
+
+manage_lvm: true
+
+lvm_groups:
+  - vgname: vg_sys
+    disks:
+      - /dev/vda3
+    create: true
+    lvnames:
+      - lvname: lv_root
+        size: 16g
+        create: true
+        filesystem: xfs
+        mntp: /
+        mount: true
+  - vgname: vg_data
+    disks:
+      - /dev/vdb
+    create: false
+    lvnames:
+      - lvname: lv_prometheus
+        size: 20g
+        create: false
+        filesystem: xfs
+        mount: true
+        mntp: /var/lib/prometheus
+

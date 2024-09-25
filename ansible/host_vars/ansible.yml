@@ -1,0 +1,16 @@
+---
+
+manage_lvm: true
+
+lvm_groups:
+  - vgname: vg_sys
+    disks:
+      - /dev/vda3
+    create: false
+    lvnames:
+      - lvname: lv_root
+        size: 16g
+        create: true
+        filesystem: xfs
+        mntp: /
+        mount: true

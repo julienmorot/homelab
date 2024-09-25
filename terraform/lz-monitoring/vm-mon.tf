@@ -73,6 +73,12 @@ resource "proxmox_vm_qemu" "mon" {
           storage = "local"
         }
       }
+      virtio1 {
+        disk {
+          size    = 30
+          storage = "local"
+        }
+      }
     }
   }
 

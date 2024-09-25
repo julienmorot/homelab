@@ -1,6 +1,11 @@
 ---
 
 roles:
+  - name: ansible-role-lvm
+    src: https://github.com/mrlesmithjr/ansible-manage-lvm.git
+    scm: git
+    version: master
+
   - name: ansible-role-consul
     src: git@gitlab.com:julienmorot/ansible-role-consul.git
     scm: git
@@ -23,3 +28,6 @@ roles:
 
 collections:
   - name: prometheus.prometheus
+  - name: community.general
+  - name: mrlesmithjr.manage_lvm
+  - name: evrardjp.keepalived

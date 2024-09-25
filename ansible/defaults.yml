@@ -4,6 +4,7 @@
   become: yes
   vars:
   roles:
+    - ansible-role-lvm
     - ansible-role-sysdefaults
     - prometheus.prometheus.node_exporter
 
