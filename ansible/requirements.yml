@@ -26,8 +26,9 @@ roles:
     scm: git
     version: main
 
+  - name: mrlesmithjr.manage_lvm
+  - name: evrardjp.keepalived
+
 collections:
   - name: prometheus.prometheus
   - name: community.general
-  - name: mrlesmithjr.manage_lvm
-  - name: evrardjp.keepalived

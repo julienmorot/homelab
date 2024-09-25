@@ -1,0 +1,8 @@
+keepalived_instances:
+  internal:
+    interface: "{{ vrrp_nic | default(ansible_default_ipv4.interface, true) }}"
+    state: "{{ (groups['lb'].index(inventory_hostname) == 0) | ternary('MASTER','BACKUP') }}"
+    virtual_router_id: 69
+    priority: "{{ (inventory_hostname == groups['lb'][0]) | ternary('250', '100') }}"
+    vips:
+      - "192.168.69.33/24 dev {{ vrrp_nic | default(ansible_default_ipv4.interface, true) }}"
