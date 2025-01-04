@@ -1,11 +1,11 @@
-resource "proxmox_cloud_init_disk" "ci-teleport" {
-  name     = "teleport"
+resource "proxmox_cloud_init_disk" "ci-teleport01" {
+  name     = "teleport01"
   pve_node = "ns33672748"
   storage  = "local"
 
   meta_data = yamlencode({
-    instance_id    = sha1("teleport")
-    local-hostname = "teleport"
+    instance_id    = sha1("teleport01")
+    local-hostname = "teleport01"
   })
 
   user_data = <<EOT
@@ -28,7 +28,7 @@ EOT
       name = "ens18"
       subnets = [{
         type            = "static"
-        address         = "192.168.69.100/24"
+        address         = "192.168.69.101/24"
         gateway         = "192.168.69.1"
         dns_nameservers = ["192.168.69.1"]
       }]
@@ -36,11 +36,11 @@ EOT
   })
 }
 
-resource "proxmox_vm_qemu" "teleport" {
-  name        = "teleport"
+resource "proxmox_vm_qemu" "teleport01" {
+  name        = "teleport01"
   desc        = "A test for using terraform and cloudinit"
   target_node = local.pm_node
-  clone       = "tpl-ubuntu-2204"
+  clone       = "tpl-ubuntu-2404"
   full_clone  = "true"
   bios        = "seabios"
 
@@ -62,7 +62,7 @@ resource "proxmox_vm_qemu" "teleport" {
     ide {
       ide2 {
         cdrom {
-          iso = "local:${proxmox_cloud_init_disk.ci-teleport.id}"
+          iso = "local:${proxmox_cloud_init_disk.ci-teleport01.id}"
         }
       }
     }
