@@ -52,7 +52,7 @@ resource "proxmox_vm_qemu" "nomad01" {
   cores    = 2
   sockets  = 1
   vcpus    = 0
-  cpu      = "host"
+  cpu_type = "host"
   memory   = 2048
   scsihw   = "virtio-scsi-pci"
   bootdisk = "virtio0"
@@ -78,6 +78,7 @@ resource "proxmox_vm_qemu" "nomad01" {
 
 
   network {
+    id     = 0
     model  = "virtio"
     bridge = "vmbr1"
   }
