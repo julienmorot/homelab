@@ -28,7 +28,7 @@ EOT
       name = "ens18"
       subnets = [{
         type            = "static"
-        address         = "192.168.69.32/24"
+        address         = "192.168.69.82/24"
         gateway         = "192.168.69.1"
         dns_nameservers = ["192.168.69.1"]
       }]
@@ -40,7 +40,7 @@ resource "proxmox_vm_qemu" "nomad02" {
   name        = "nomad02"
   desc        = "A test for using terraform and cloudinit"
   target_node = local.pm_node
-  clone       = "tpl-ubuntu-2204"
+  clone       = "tpl-ubuntu-2404"
   full_clone  = "true"
   bios        = "seabios"
 
