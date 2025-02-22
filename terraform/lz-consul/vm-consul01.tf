@@ -1,11 +1,11 @@
-resource "proxmox_cloud_init_disk" "ci-consul02" {
-  name     = "consul02"
+resource "proxmox_cloud_init_disk" "ci-consul01" {
+  name     = "consul01"
   pve_node = "ns33672748"
   storage  = "local"
 
   meta_data = yamlencode({
-    instance_id    = sha1("consul02")
-    local-hostname = "consul02"
+    instance_id    = sha1("consul01")
+    local-hostname = "consul01"
   })
 
   user_data = <<EOT
@@ -28,7 +28,7 @@ EOT
       name = "ens18"
       subnets = [{
         type            = "static"
-        address         = "192.168.69.12/24"
+        address         = "192.168.69.11/24"
         gateway         = "192.168.69.1"
         dns_nameservers = ["192.168.69.1"]
       }]
@@ -36,11 +36,11 @@ EOT
   })
 }
 
-resource "proxmox_vm_qemu" "consul02" {
-  name        = "consul02"
-  desc        = "A test for using terraform and cloudinit"
+resource "proxmox_vm_qemu" "consul01" {
+  name        = "consul01"
+  desc        = "Consul Server"
   target_node = local.pm_node
-  clone       = "tpl-ubuntu-2204"
+  clone       = "tpl-ubuntu-2404"
   full_clone  = "true"
   bios        = "seabios"
 
@@ -62,7 +62,7 @@ resource "proxmox_vm_qemu" "consul02" {
     ide {
       ide2 {
         cdrom {
-          iso = "local:${proxmox_cloud_init_disk.ci-consul02.id}"
+          iso = "local:${proxmox_cloud_init_disk.ci-consul01.id}"
         }
       }
     }
