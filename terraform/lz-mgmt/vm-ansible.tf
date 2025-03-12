@@ -40,7 +40,7 @@ resource "proxmox_vm_qemu" "ansible" {
   name        = "ansible"
   desc        = "A test for using terraform and cloudinit"
   target_node = local.pm_node
-  clone       = "tpl-ubuntu-2204"
+  clone       = "tpl-ubuntu-2404"
   full_clone  = "true"
   bios        = "seabios"
 
